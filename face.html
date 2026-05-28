@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>顔を描く</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .face {
+            position: relative;
+            width: 200px;
+            height: 250px;
+            background-color: #fdbcb4;
+            border-radius: 50% 50% 45% 45%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .eye {
+            position: absolute;
+            width: 30px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            top: 80px;
+        }
+
+        .eye-left {
+            left: 50px;
+        }
+
+        .eye-right {
+            right: 50px;
+        }
+
+        .pupil {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: #333;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .mouth {
+            position: absolute;
+            width: 60px;
+            height: 30px;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 3px solid #333;
+            border-top: none;
+            border-radius: 0 0 60px 60px;
+        }
+
+        .nose {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 15px solid #e0a090;
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cheek {
+            position: absolute;
+            width: 25px;
+            height: 20px;
+            background-color: rgba(255, 192, 203, 0.5);
+            border-radius: 50%;
+        }
+
+        .cheek-left {
+            left: 20px;
+            top: 130px;
+        }
+
+        .cheek-right {
+            right: 20px;
+            top: 130px;
+        }
+    </style>
+</head>
+<body>
+    <div class="face">
+        <div class="eye eye-left">
+            <div class="pupil"></div>
+        </div>
+        <div class="eye eye-right">
+            <div class="pupil"></div>
+        </div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+        <div class="cheek cheek-left"></div>
+        <div class="cheek cheek-right"></div>
+    </div>
+</body>
+</html>
