@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自己紹介動画 - 1分間</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .scene {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            flex-direction: column;
+        }
+
+        .scene.active {
+            opacity: 1;
+        }
+
+        .profile-section {
+            text-align: center;
+            color: white;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 30px;
+            font-size: 100px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .name {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+
+        .info {
+            font-size: 1.8rem;
+            margin: 15px 0;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .description {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            line-height: 1.6;
+            max-width: 600px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .emoji {
+            font-size: 3rem;
+            margin: 20px 0;
+        }
+
+        .end-message {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: 40px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0.5; }
+        }
+
+        .highlight {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            width: 600px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #e0e0e0;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            font-size: 1.2rem;
+            color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- シーン1: タイトル -->
+        <div class="scene active" id="scene1">
+            <div class="profile-section">
+                <div class="emoji">👋</div>
+                <div class="name">自己紹介</div>
+                <div class="title">1分間で知ってほしいこと</div>
+            </div>
+        </div>
+
+        <!-- シーン2: プロフィール -->
+        <div class="scene" id="scene2">
+            <div class="profile-section">
+                <div class="profile-image">👧</div>
+                <div class="name">田中 優奈</div>
+                <div class="title">タナカ ユウナ</div>
+                <div class="info">大阪工業大学 B4</div>
+            </div>
+        </div>
+
+        <!-- シーン3: 専門分野 -->
+        <div class="scene" id="scene3">
+            <div class="profile-section">
+                <div class="emoji">🤖</div>
+                <div class="name">専門分野</div>
+                <div class="description">
+                    <span class="highlight">機械学習・AI</span> を研究しています。<br>
+                    特に、画像認識と自然言語処理が得意です。
+                </div>
+            </div>
+        </div>
+
+        <!-- シーン4: 実績 -->
+        <div class="scene" id="scene4">
+            <div class="profile-section">
+                <div class="emoji">🏆</div>
+                <div class="name">実績</div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">論文発表</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">受賞経歴</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">プロジェクト</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- シーン5: スキル -->
+        <div class="scene" id="scene5">
+            <div class="profile-section">
+                <div class="emoji">💻</div>
+                <div class="name">スキル</div>
+                <div class="description">
+                    <span class="highlight">Python</span> / JavaScript / SQL<br>
+                    TensorFlow / PyTorch / React
+                </div>
+            </div>
+        </div>
+
+        <!-- シーン6: 趣味 -->
+        <div class="scene" id="scene6">
+            <div class="profile-section">
+                <div class="emoji">🎵🎨📚</div>
+                <div class="name">趣味</div>
+                <div class="description">
+                    音楽鑑賞、デジタルアート、読書<br>
+                    最近はAIアートに夢中です！
+                </div>
+            </div>
+        </div>
+
+        <!-- シーン7: メッセージ -->
+        <div class="scene" id="scene7">
+            <div class="profile-section">
+                <div class="emoji">💡</div>
+                <div class="name">目標</div>
+                <div class="description">
+                    「AIで世界をより良くする」<br>
+                    これが私の夢です。一緒に頑張りましょう！
+                </div>
+            </div>
+        </div>
+
+        <!-- シーン8: エンド -->
+        <div class="scene" id="scene8">
+            <div class="profile-section">
+                <div class="profile-image">😊</div>
+                <div class="name">田中 優奈</div>
+                <div class="end-message">ありがとうございました！</div>
+                <div class="description" style="margin-top: 40px;">
+                    何か質問があれば、<br>
+                    いつでもお気軽にお声がけください 💌
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">0:00 / 1:00</div>
+
+    <script>
+        const scenes = [
+            { id: 'scene1', duration: 7 },
+            { id: 'scene2', duration: 8 },
+            { id: 'scene3', duration: 8 },
+            { id: 'scene4', duration: 8 },
+            { id: 'scene5', duration: 8 },
+            { id: 'scene6', duration: 8 },
+            { id: 'scene7', duration: 8 },
+            { id: 'scene8', duration: 9 }
+        ];
+
+        let currentScene = 0;
+        let elapsedTime = 0;
+        const totalDuration = 60; // 60秒
+
+        function updateScene() {
+            // 前のシーンを非表示
+            if (currentScene > 0) {
+                document.getElementById(scenes[currentScene - 1].id).classList.remove('active');
+            }
+
+            if (currentScene < scenes.length) {
+                const scene = document.getElementById(scenes[currentScene].id);
+                scene.classList.add('active');
+
+                const duration = scenes[currentScene].duration;
+                elapsedTime += duration;
+
+                // タイマー更新
+                updateFooter(elapsedTime);
+
+                if (elapsedTime < totalDuration) {
+                    currentScene++;
+                    setTimeout(updateScene, duration * 1000);
+                } else {
+                    // 終了時は最後のシーンを表示
+                    updateFooter(60);
+                }
+            }
+        }
+
+        function updateFooter(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            const footer = document.querySelector('.footer');
+            footer.textContent = `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')} / 1:00`;
+        }
+
+        // 開始
+        setTimeout(updateScene, scenes[0].duration * 1000);
+    </script>
+</body>
+</html>
