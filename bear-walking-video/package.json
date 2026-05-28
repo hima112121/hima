@@ -1,0 +1,24 @@
+{
+  "name": "bear-walking-video",
+  "version": "1.0.0",
+  "description": "A cute 3D bear walking animation video using Remotion",
+  "scripts": {
+    "start": "remotion studio",
+    "build": "remotion render src/index.tsx out/video.mp4",
+    "preview": "remotion preview src/index.tsx"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remotion": "^4.0.0",
+    "three": "^r158",
+    "@react-three/fiber": "^8.14.0",
+    "@react-three/drei": "^9.88.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/three": "^r158"
+  }
+}
